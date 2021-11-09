@@ -1,0 +1,15 @@
+div {
+    color: red;
+}
+
+.otherTag.otherDiv {
+    color: brown;
+}
+
+.otherDiv {
+    color: blue;
+}
+
+#theFirstOfOthers {
+    color: orange;
+}
