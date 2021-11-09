@@ -13,3 +13,13 @@ div {
 #theFirstOfOthers {
     color: orange;
 }
+
+.carContainer {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+i {
+    color: black;
+    margin-right: 3px;
+}
