@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+}
+
+a {
+    cursor: pointer;
+}
+
+#header {
+    background-color: cadetblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+
+#header h1 {
+    color: white;
+}
+
+#menu a {
+    margin: 0 5px 0 5px;
+}
+
+#content {
+    background-color: lightgray;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contentTile {
+    height: 100px;
+    width: 150px;
+    background-color: lightgreen;
+    margin: 20px;
+}
