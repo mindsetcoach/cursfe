@@ -1,5 +1,26 @@
 body {
     margin: 0;
+    position: relative;
+}
+
+#popup {
+    position: fixed;
+    top: 10%;
+    bottom: 10%;
+    left: 50px;
+    right: 50px;
+    border-style: solid;
+    background-color: beige;
+}
+
+#popup .popupHeader {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+#popup .headerClose {
+    padding: 3px 10px 3px 10px;
+    cursor: pointer;
 }
 
 a {

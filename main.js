@@ -85,7 +85,7 @@ console.log(myFirstArray.length);
 console.log(myFirstArray[2]);
 console.log(myFirstArray[3]);
 console.log(myFirstArray[5]);
-console.log (myFirstArray[5].a );
+console.log (myFirstArray[5].a);
 
 console.log(myObject.name);
 console.log(myObject.age);
