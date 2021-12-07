@@ -1,0 +1,25 @@
+#crewPopup {
+    display: none;
+    position: fixed;
+    top: 10%;
+    bottom: 10%;
+    left: 50px;
+    right: 50px;
+    border-style: solid;
+    background-color: beige;
+}
+
+#crewPopup .popupHeader {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+#crewPopup .headerClose {
+    padding: 3px 10px 3px 10px;
+    cursor: pointer;
+}
+
+#crewPopup .popupContent {
+    display: flex;
+    justify-content: space-evenly;
+}
