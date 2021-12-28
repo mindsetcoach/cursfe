@@ -1,3 +1,7 @@
+#header {
+    background-color: cadetblue;
+}
+
 #crewPopup {
     display: none;
     position: fixed;
