@@ -3,6 +3,11 @@ body {
     position: relative;
 }
 
+body > div {
+    max-width: 1000px;
+    margin: auto;
+}
+
 a {
     cursor: pointer;
 }
@@ -19,16 +24,35 @@ a {
 }
 
 #content {
-    background-color: lightgray;
     display: flex;
     flex-wrap: wrap;
 }
 
 .contentTile {
-    height: 100px;
-    width: 150px;
-    background-color: lightgreen;
-    margin: 20px;
+    aspect-ratio: 5 / 3;
+}
+
+@media only screen and (min-width: 801px) {
+    .contentTile {
+        width: 33.3%;
+    }
+}
+@media only screen and (max-width: 800px) {
+    .contentTile {
+        width: 50%;
+    }
+}
+@media only screen and (max-width: 500px) {
+    .contentTile {
+        width: 100%;
+    }
+}
+
+.contentTileCore {
+    margin: 10px;
+    background-color: lightgrey;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
 }
 
 #menu {
