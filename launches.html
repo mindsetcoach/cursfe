@@ -5,7 +5,10 @@
         <title>SpaceX Info Site - Launches</title>
         <link rel="stylesheet" href="main.css">
         <link rel="stylesheet" href="launches/launches.css">
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
         <script src="main.js" defer></script>
+        <script src="launches/initialize.js" defer></script>
     </head>
 
     <body>
@@ -18,8 +21,14 @@
             <a href="crew.html">Crew</a>
         </div>
         <div id="content">
-            <div id="crewTile" class="contentTile">
-                <div class="contentTileCore"></div>
+            <div id="nextLaunchTile" class="contentTile">
+                <div class="contentTileCore">
+                    <h4>Next launch:</h4>
+                    <div class="days">Days:<span></span></div>
+                    <div class="hours">Hours:<span></span></div>
+                    <div class="minutes">Minutes:<span></span></div>
+                    <div class="seconds">Seconds:<span></span></div>
+                </div>
             </div>
             <div id="capsulesTile" class="contentTile">
                 <div class="contentTileCore"></div>
