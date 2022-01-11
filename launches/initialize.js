@@ -60,7 +60,55 @@ let onLaunchesResponse = function(response) {
     renderNextLaunchTile();
 };
 
+let nextLaunchTileInit = function() {
+    let nextLaunchPopup = document.getElementById('nextLaunchPopup');
+    nextLaunchPopup.style.display = 'block';
+
+    let closeButtons = document.querySelectorAll('#nextLaunchPopup .headerClose');
+    let ourCloseButton = closeButtons[0];
+    ourCloseButton.addEventListener('click', function() {
+
+        let ourPopup = document.getElementById('nextLaunchPopup');
+        ourPopup.style.display = 'none';
+    });
+}
+let totalLaunchesTileInit = function() {
+    let totalLaunchesPopup = document.getElementById('totalLaunchesPopup');
+    let theTableElement = document.querySelector('#totalLaunchesPopup table');
+
+    let data = launchesData.allLaunches;
+    for (let i = 0; i < data.length; i++) {
+        let row = theTableElement.insertRow();
+
+        let no = row.insertCell();
+        let name = row.insertCell();
+        let date = row.insertCell();
+        let ships = row.insertCell();
+
+        no.innerHTML = data[i].flight_number;
+        name.innerHTML = data[i].name;
+        date.innerHTML = data[i].date_local.split('T')[0];
+        ships.innerHTML = data[i].ships.length;
+
+    }
+
+    totalLaunchesPopup.style.display = 'block';
+
+    let closeButtons = document.querySelectorAll('#totalLaunchesPopup .headerClose');
+    let ourCloseButton = closeButtons[0];
+    ourCloseButton.addEventListener('click', function() {
+
+        let ourPopup = document.getElementById('totalLaunchesPopup');
+        ourPopup.style.display = 'none';
+    });
+}
+
 let initialize = function() {
+
+    let nextLaunchTileElement = document.getElementById('nextLaunchTile');
+    let totalLaunchesTileElement = document.getElementById('totalLaunchesTile');
+    nextLaunchTileElement.addEventListener('click', nextLaunchTileInit);
+    totalLaunchesTileElement.addEventListener('click', totalLaunchesTileInit);
 
     axios.get('https://api.spacexdata.com/v4/launches').then(onLaunchesResponse);
 };

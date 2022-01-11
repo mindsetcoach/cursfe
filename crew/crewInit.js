@@ -1,16 +1,15 @@
 let crewTileInit = function() {
 
+    let crewPopup = document.getElementById('crewPopup');
+    crewPopup.style.display = 'block';
+
     let closeButtons = document.querySelectorAll('#crewPopup .headerClose');
     let ourCloseButton = closeButtons[0];
-
     ourCloseButton.addEventListener('click', function() {
 
         let ourPopup = document.getElementById('crewPopup');
         ourPopup.style.display = 'none';
     });
-
-    let crewPopup = document.getElementById('crewPopup');
-    crewPopup.style.display = 'block';
 
     let onCrewResponse = function(response) {
         let crewData = response.data;
@@ -43,3 +42,6 @@ let crewTileInit = function() {
     
     axios.get('https://api.spacexdata.com/v4/crew').then(onCrewResponse);
 };
+
+let crewTileElement = document.getElementById('crewTile');
+crewTileElement.addEventListener('click', crewTileInit);

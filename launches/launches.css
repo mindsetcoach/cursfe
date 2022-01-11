@@ -2,11 +2,13 @@
     background-color: lightsalmon;
 }
 
-#nextLaunchTile > .contentTileCore h4 {
+#nextLaunchTile > .contentTileCore h4,
+#totalLaunchesTile > .contentTileCore h4 {
     color: darkblue;
 }
 
-#nextLaunchTile > .contentTileCore {
+#nextLaunchTile > .contentTileCore,
+#totalLaunchesTile > .contentTileCore {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -14,4 +16,30 @@
 
 #nextLaunchTile > .contentTileCore span {
     margin-left: 10px;
+}
+#totalLaunchesTile > div > div {
+    font-size: 60px;
+    font-weight: bolder;
+}
+
+#nextLaunchPopup {
+    top: 20%;
+    bottom: 20%;
+    left: calc(50% - 150px);
+    right: calc(50% - 150px);
+}
+#totalLaunchesPopup {
+    top: 5%;
+    bottom: 5%;
+    left: 5%;
+    right: 5%;
+}
+
+#totalLaunchesPopup table {
+    width: 100%;
+}
+
+#totalLaunchesPopup .popupContent {
+    overflow-y: scroll;
+    height: calc(100% - 24px);
 }

@@ -71,3 +71,20 @@ a {
 #menu > a.selected {
     opacity: 1;
 }
+
+.popup {
+    display: none;
+    position: fixed;
+    border-style: solid;
+    background-color: white;
+}
+
+.popup .headerClose {
+    padding: 3px 10px 3px 10px;
+    cursor: pointer;
+}
+
+.popup .popupHeader {
+    display: flex;
+    flex-direction: row-reverse;
+}
