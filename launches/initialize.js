@@ -1,9 +1,13 @@
-let launchesData = {};
+let launchesData = {
+    allLaunches: null,
+    nextLaunchIndex: null
+};
 
-let getNextLaunchTimestampFromAllLaunches = function(allLaunches) {
+let getNextLaunchIndexFromAllLaunches = function(allLaunches) {
 
     let nowTimestamp = Date.now();
     let nextLaunchTimestamp = nowTimestamp + (100 * 365 * 24 * 60 * 60 * 1000);
+    let currentIndex = -1;
     for (let i = 0; i < allLaunches.length; i++) {
         let aLaunch = allLaunches[i];
         let aLaunchTimestamp = aLaunch.date_unix * 1000;
@@ -13,14 +17,18 @@ let getNextLaunchTimestampFromAllLaunches = function(allLaunches) {
             nextLaunchTimestamp > aLaunchTimestamp
         ) {
             nextLaunchTimestamp = aLaunchTimestamp;
+            currentIndex = i;
         }
     }
-    return nextLaunchTimestamp;
+    return currentIndex;
 };
 
 let renderNextLaunchTile = function() {
     let now = moment(Date.now());
-    let nextLaunchMoment = moment(launchesData.nextLaunchTimestamp);
+
+    let nextLaunchMoment = moment(
+        launchesData.allLaunches[launchesData.nextLaunchIndex].date_unix * 1000
+    );
 
     let duration = moment.duration(nextLaunchMoment.diff(now));
     //Get Days and subtract from duration
@@ -50,11 +58,11 @@ let renderNextLaunchTile = function() {
 
 let onLaunchesResponse = function(response) {
     let allLaunches = response.data;
-    let nextLaunchTimestamp = getNextLaunchTimestampFromAllLaunches(allLaunches);
+    let nextLaunchIndex = getNextLaunchIndexFromAllLaunches(allLaunches);
 
     // we save our computed data
     launchesData.allLaunches = allLaunches;
-    launchesData.nextLaunchTimestamp = nextLaunchTimestamp;
+    launchesData.nextLaunchIndex = nextLaunchIndex;
     
     // we start drawing the UI
     renderNextLaunchTile();
