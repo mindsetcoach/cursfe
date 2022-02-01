@@ -19,8 +19,11 @@ let initialize = function() {
 
     let nextLaunchTileElement = document.getElementById('nextLaunchTile');
     let totalLaunchesTileElement = document.getElementById('totalLaunchesTile');
+    let launchesMonthsTileElement = document.getElementById('launchesMonthsTile');
+
     nextLaunchTileElement.addEventListener('click', nextLaunchTile.init);
     totalLaunchesTileElement.addEventListener('click', totalLaunchesTile.init);
+    launchesMonthsTileElement.addEventListener('click', launchesMonthsTile.init);
 
     axios.get('https://api.spacexdata.com/v4/launches').then(onLaunchesResponse);
 };

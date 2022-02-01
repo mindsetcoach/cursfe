@@ -3,14 +3,20 @@
 
     <head>
         <title>SpaceX Info Site - Launches</title>
+
         <link rel="stylesheet" href="main.css">
         <link rel="stylesheet" href="launches/launches.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+
         <script src="main.js" defer></script>
         <script src="launches/utils.js" defer></script>
         <script src="launches/nextLaunchTile.js" defer></script>
         <script src="launches/totalLaunchesTile.js" defer></script>
+        <script src="launches/launchesMonthsTile.js" defer></script>
         <script src="launches/initialize.js" defer></script>
     </head>
 
@@ -39,6 +45,12 @@
                     <div class="launchesCount">234</div>
                 </div>
             </div>
+            <div id="launchesMonthsTile" class="contentTile">
+                <div class="contentTileCore">
+                    <h4>Launches months:</h4>
+                    <i class="fa fa-car"></i>
+                </div>
+            </div>
         </div>
         <div id="nextLaunchPopup" class="popup">
             <div class="popupHeader">
@@ -62,6 +74,15 @@
                         <th>Ships</th>
                     </tr>
                 </table>
+            </div>
+        </div>
+        <div id="launchesMonthsPopup" class="popup">
+            <div class="popupHeader">
+                <span class="headerClose">x</span>
+            </div>
+            <div class="popupContent">
+                <h3>All launches per respective month:</h3>
+                <canvas id="launchesChart"></canvas>
             </div>
         </div>
     </body>
