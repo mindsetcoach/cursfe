@@ -1,3 +1,8 @@
 #header {
     background-color: lightgreen;
 }
+
+#homeMap {
+    width: 100%;
+    height: 250px;
+}

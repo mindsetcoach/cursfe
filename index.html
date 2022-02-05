@@ -5,8 +5,15 @@
         <title>SpaceX Info Site - Home</title>
         <link rel="stylesheet" href="main.css">
         <link rel="stylesheet" href="home/home.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-        <script src="crew/crewInit.js" defer></script>
+        <script src="home/initalize.js" defer></script>
         <script src="main.js" defer></script>
     </head>
 
@@ -20,15 +27,7 @@
         <a href="crew.html">Crew</a>
       </div>
       <div id="content">
-        <div id="crewTile" class="contentTile">
-          <div class="contentTileCore"></div>
-        </div>
-        <div id="capsulesTile" class="contentTile">
-          <div class="contentTileCore"></div>
-        </div>
-        <div id="launchesTile" class="contentTile">
-          <div class="contentTileCore"></div>
-        </div>
+        <div id="homeMap"></div>
       </div>
     </body>
 </html>
