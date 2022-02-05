@@ -31,15 +31,18 @@ let totalCrewTile = {
                 alert('Our selected crew member has the ID of: ' + crewId);
             });
 
-            let image = document.createElement('img');
+            let imageContainer = document.createElement('div');
             let label = document.createElement('span');
+            let image = document.createElement('img');
 
-            image.src = theCosmounaut.image;
+            imageContainer.classList.add('imageContainer');
             label.innerHTML = theCosmounaut.name;
+            image.src = theCosmounaut.image;
 
-            galleryItem.appendChild(image);
+            imageContainer.appendChild(image);
+
+            galleryItem.appendChild(imageContainer);
             galleryItem.appendChild(label);
-
 
             parentContainer.appendChild(galleryItem);
         }

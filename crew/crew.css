@@ -24,10 +24,12 @@
     cursor: pointer;
 }
 
-.galleryItem > img {
-    display: block;
-    width: 200px;
+.galleryItem > .imageContainer {
+    width: 100%;
     height: calc(100% - 25px);
+    background-color: black;
+    display: flex;
+    align-items: center;
 }
 
 .galleryItem > span {
@@ -35,4 +37,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.imageContainer > img {
+    width: 100%;
+    aspect-ratio: initial;
 }
