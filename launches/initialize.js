@@ -13,6 +13,7 @@ let onLaunchesResponse = function(response) {
     
     // we start drawing the UI
     nextLaunchTile.render();
+    totalLaunchesTile.render();
 };
 
 let initialize = function() {

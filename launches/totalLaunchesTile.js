@@ -29,5 +29,10 @@ let totalLaunchesTile = {
             let ourPopup = document.getElementById('totalLaunchesPopup');
             ourPopup.style.display = 'none';
         });
+    },
+
+    render: function() {
+        let launchesCountDiv = document.querySelector('#totalLaunchesTile .launchesCount');
+        launchesCountDiv.innerHTML = launchesData.allLaunches.length;
     }
 };
