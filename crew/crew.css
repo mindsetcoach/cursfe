@@ -43,3 +43,8 @@
     width: 100%;
     aspect-ratio: initial;
 }
+
+#crewTile > div > div {
+    font-size: 60px;
+    font-weight: bolder;
+}

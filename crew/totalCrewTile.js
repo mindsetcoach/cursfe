@@ -46,6 +46,9 @@ let totalCrewTile = {
 
             parentContainer.appendChild(galleryItem);
         }
+
+        let crewCountDiv = document.querySelector('#crewTile .crewCount');
+        crewCountDiv.innerHTML = crewData.allCrew.length;
     }
 
 };
