@@ -18,6 +18,12 @@ let totalCrewTile = {
             '#crewPopupCarousel .carouselBack'
         );
         carouselBackButton.addEventListener('click', this.onCarouselPopupBack);
+
+        // we initialize the prev & next buttons
+        let carouselPrevButton = document.querySelector('#crewPopupCarousel .prevButton');
+        let carouselNextButton = document.querySelector('#crewPopupCarousel .nextButton');
+        carouselPrevButton.addEventListener('click', this.onCarouselPopupPrev);
+        carouselNextButton.addEventListener('click', this.onCarouselPopupNext);
     },
 
     render: function() {
@@ -74,12 +80,12 @@ let totalCrewTile = {
         carouselPopup.style.display = 'block';
     },
 
-    onGalleryPopupClose: function(event) {
+    onGalleryPopupClose: function() {
         let galleryPopup = document.querySelector('#crewPopup > .modal');
         galleryPopup.style.display = 'none';
     },
 
-    onCarouselPopupClose: function(event) {
+    onCarouselPopupClose: function() {
         let carouselPopup = document.querySelector('#crewPopupCarousel > .modal');
         carouselPopup.style.display = 'none';
         
@@ -87,9 +93,63 @@ let totalCrewTile = {
         galleryPopup.style.display = 'none';
     },
 
-    onCarouselPopupBack: function(event) {
+    onCarouselPopupBack: function() {
         let carouselPopup = document.querySelector('#crewPopupCarousel > .modal');
         carouselPopup.style.display = 'none';
+    },
+
+    onCarouselPopupPrev: function() {
+        let prevButton = document.querySelector('#crewPopupCarousel .prevButton');
+        let nextButton = document.querySelector('#crewPopupCarousel .nextButton');
+        prevButton.removeAttribute('disabled');
+        nextButton.removeAttribute('disabled');
+
+        let selectedCrewId = crewData.selectedGalleryItemId;
+        let crewMember = utils.getCrewPrevCrewMember(crewData.allCrew, selectedCrewId);
+
+        if (utils.getCrewPrevCrewMember(crewData.allCrew, crewMember.id) === null) {
+            let prevButton = document.querySelector('#crewPopupCarousel .prevButton');
+            prevButton.setAttribute('disabled', true);
+        };
+
+        crewData.selectedGalleryItemId = crewMember.id;
+
+        // we use the crewId to render the appropriate image
+        let carouselImage = document.createElement('img');
+        carouselImage.src = crewMember.image;
+
+        // we insert this JS object into the DOM
+        let carouselImageParent = document.querySelector('#crewPopupCarousel .carouselImageContainer');
+        // we empty the last img tag from the carousel
+        carouselImageParent.innerHTML = '';
+        carouselImageParent.appendChild(carouselImage);
+    },
+
+    onCarouselPopupNext: function() {
+        let prevButton = document.querySelector('#crewPopupCarousel .prevButton');
+        let nextButton = document.querySelector('#crewPopupCarousel .nextButton');
+        prevButton.removeAttribute('disabled');
+        nextButton.removeAttribute('disabled');
+
+        let selectedCrewId = crewData.selectedGalleryItemId;
+        let crewMember = utils.getCrewNextCrewMember(crewData.allCrew, selectedCrewId);
+
+        if (utils.getCrewNextCrewMember(crewData.allCrew, crewMember.id) === null) {
+            let nextButton = document.querySelector('#crewPopupCarousel .nextButton');
+            nextButton.setAttribute('disabled', true);
+        };
+
+        crewData.selectedGalleryItemId = crewMember.id;
+
+        // we use the crewId to render the appropriate image
+        let carouselImage = document.createElement('img');
+        carouselImage.src = crewMember.image;
+
+        // we insert this JS object into the DOM
+        let carouselImageParent = document.querySelector('#crewPopupCarousel .carouselImageContainer');
+        // we empty the last img tag from the carousel
+        carouselImageParent.innerHTML = '';
+        carouselImageParent.appendChild(carouselImage);
     }
 
 };

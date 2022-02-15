@@ -45,6 +45,30 @@ let utils = {
                 return allCrew[i].image;
             }
         }
+    },
+
+    getCrewPrevCrewMember: function(allCrew, crewId) {
+        for (let i = 0; i < allCrew.length; i++) {
+            if (allCrew[i].id === crewId) {
+                if (i === 0) {
+                    return null;
+                } else {
+                    return allCrew[i - 1];
+                }
+            }
+        }
+    },
+
+    getCrewNextCrewMember: function(allCrew, crewId) {
+        for (let i = 0; i < allCrew.length; i++) {
+            if (allCrew[i].id === crewId) {
+                if (i === allCrew.length - 1) {
+                    return null;
+                } else {
+                    return allCrew[i + 1];
+                }
+            }
+        }
     }
 
 };
