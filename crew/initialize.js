@@ -1,5 +1,6 @@
 let crewData = {
-    allCrew: null
+    allCrew: null,
+    selectedGalleryItemId: null
 };
 
 let onCrewResponse = function(response) {
@@ -17,7 +18,7 @@ let onCrewResponse = function(response) {
 let initialize = function() {
 
     let crewTileElement = document.getElementById('crewTile');
-    crewTileElement.addEventListener('click', totalCrewTile.init);
+    crewTileElement.addEventListener('click', totalCrewTile.init.bind(totalCrewTile));
     
     axios.get('https://api.spacexdata.com/v4/crew').then(onCrewResponse);
 };

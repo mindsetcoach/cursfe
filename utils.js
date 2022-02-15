@@ -37,6 +37,14 @@ let utils = {
         }
 
         return launchesPerMonth;
+    },
+
+    getCrewMemberPhotoByCrewMemberId: function(allCrew, crewId) {
+        for (let i = 0; i < allCrew.length; i++) {
+            if (allCrew[i].id === crewId) {
+                return allCrew[i].image;
+            }
+        }
     }
 
 };

@@ -50,3 +50,21 @@
     font-size: 60px;
     font-weight: bolder;
 }
+
+.bootstrapPopupContent {
+    display: flex;
+    justify-content: space-around;
+}
+
+#crewPopupCarousel .carouselImageContainer > img {
+    height: 350px;
+    aspect-ratio: initial;
+}
+
+#crewPopup .galleryPopup {
+    height: 350px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+}
