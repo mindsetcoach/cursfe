@@ -1,16 +1,6 @@
 let nextLaunchTile = {
 
     init: function() {
-        let nextLaunchPopup = document.getElementById('nextLaunchPopup');
-        nextLaunchPopup.style.display = 'block';
-    
-        let closeButtons = document.querySelectorAll('#nextLaunchPopup .headerClose');
-        let ourCloseButton = closeButtons[0];
-        ourCloseButton.addEventListener('click', function() {
-    
-            let ourPopup = document.getElementById('nextLaunchPopup');
-            ourPopup.style.display = 'none';
-        });
     },
 
     render: function() {

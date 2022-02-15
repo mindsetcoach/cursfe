@@ -33,6 +33,10 @@ a {
     aspect-ratio: 5 / 3;
 }
 
+.contentTile.clickableTile {
+    cursor: pointer;
+}
+
 .contentTileCore h4 {
     color: darkblue;
     font-size: 16px;
