@@ -1,5 +1,7 @@
 #header {
     background-color: cadetblue;
+    background-image: url("../images/spacex-crew-small.jpeg");
+    background-position: center;
 }
 
 #crewPopup {

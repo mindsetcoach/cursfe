@@ -14,9 +14,10 @@ a {
 
 #header {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    height: 200px;
+    height: 280px;
+    padding-left: 5%;
 }
 
 #header h1 {

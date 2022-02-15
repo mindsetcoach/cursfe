@@ -1,5 +1,7 @@
 #header {
     background-color: lightsalmon;
+    background-image: url("../images/spacex-launches-small.jpeg");
+    background-position: center;
 }
 
 #nextLaunchTile > .contentTileCore span {

@@ -1,5 +1,7 @@
 #header {
     background-color: lightgreen;
+    background-image: url("../images/spacex-home-small.jpeg");
+    background-position: center;
 }
 
 #homeMap {
@@ -13,4 +15,9 @@
     display: flex;
     flex-direction: row-reverse;
     padding-right: 10px;
+}
+
+#companyInfoSection > p,
+#companyInfoSection > table {
+    font-size: smaller;
 }

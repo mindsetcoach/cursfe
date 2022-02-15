@@ -11,14 +11,8 @@ let companyInfoSection = {
         let summaryElement = document.querySelector('#companyInfoSection > p');
         summaryElement.innerHTML = homeData.companyInfo.summary;
 
-        let founderElement = document.querySelector('#companyInfoSection .stat-founder');
-        founderElement.innerHTML = homeData.companyInfo.founder;
-
         let employeesElement = document.querySelector('#companyInfoSection .stat-employees');
         employeesElement.innerHTML = homeData.companyInfo.employees;
-
-        let vehiclesElement = document.querySelector('#companyInfoSection .stat-vehicles');
-        vehiclesElement.innerHTML = homeData.companyInfo.vehicles;
 
         let launchSitesElement = document.querySelector('#companyInfoSection .stat-launch_sites');
         launchSitesElement.innerHTML = homeData.companyInfo.launch_sites;
