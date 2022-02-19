@@ -57,12 +57,12 @@
 }
 
 #crewPopupCarousel .carouselImageContainer > img {
-    height: 350px;
+    height: 60vh;
     aspect-ratio: initial;
 }
 
 #crewPopup .galleryPopup {
-    height: 350px;
+    height: 60vh;
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;

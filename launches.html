@@ -60,19 +60,34 @@
                 </div>
             </div>
         </div>
-        <div id="totalLaunchesPopup" class="popup">
-            <div class="popupHeader">
-                <span class="headerClose">x</span>
-            </div>
-            <div class="popupContent">
-                <table>
-                    <tr>
-                        <th>NO.</th>
-                        <th>Name</th>
-                        <th>Date</th>
-                        <th>Ships</th>
-                    </tr>
-                </table>
+        <div id="totalLaunchesPopup" class="new-popup">
+            <div class="modal" tabindex="-1">
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Total launches</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="bootstrapPopupContent">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">NO.</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Date</th>
+                                        <th scope="col">Ships</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                      <!-- <button type="button" class="btn btn-primary carouselBack" data-bs-dismiss="modal">Back to gallery</button> -->
+                    </div>
+                  </div>
+                </div>
             </div>
         </div>
         <div id="launchesMonthsPopup" class="popup">

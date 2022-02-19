@@ -1,7 +1,7 @@
 let totalLaunchesTile = {
 
     init: function() {
-        let totalLaunchesPopup = document.getElementById('totalLaunchesPopup');
+        let totalLaunchesPopup = document.querySelector('#totalLaunchesPopup > .modal');
         let theTableElement = document.querySelector('#totalLaunchesPopup table');
     
         let data = launchesData.allLaunches;
@@ -22,11 +22,10 @@ let totalLaunchesTile = {
     
         totalLaunchesPopup.style.display = 'block';
     
-        let closeButtons = document.querySelectorAll('#totalLaunchesPopup .headerClose');
-        let ourCloseButton = closeButtons[0];
+        let ourCloseButton = document.querySelector('#totalLaunchesPopup .btn-close');
         ourCloseButton.addEventListener('click', function() {
     
-            let ourPopup = document.getElementById('totalLaunchesPopup');
+            let ourPopup = document.querySelector('#totalLaunchesPopup > .modal');
             ourPopup.style.display = 'none';
         });
     },

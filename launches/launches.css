@@ -35,9 +35,9 @@
     width: 100%;
 }
 
-#totalLaunchesPopup .popupContent {
+#totalLaunchesPopup .bootstrapPopupContent {
     overflow-y: scroll;
-    height: calc(100% - 24px);
+    height: 60vh;;
 }
 
 #launchesMonthsTile .contentTileCore i {
